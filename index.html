@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>More than you ever wanted to know...</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+</head>
+
+<body>
+    <h1>More than you wanted to know about... belly button fauna.</h1>
+    <h3>Not for review while eating!</h3>
+    
+    <div class = "container">
+    
+      <div class = "row">
+        <div class = "col-md-12">
+          <!-- https://www.w3schools.com/tags/ev_onchange.asp -->
+          <select id="dropDown" onchange="choice(this.value)"></select>
+        </div>
+
+      </div>
+      
+      <div class = "row">
+
+        <div class="col-md-4">
+
+          <h3>Participant Info</h3>
+
+          <div id = "participantDataBox"></div>
+
+        </div>
+
+        <div class = "col-md-8">
+
+          <h3>Top 10 Species of Fauna:</h3>
+          <div id = "hplot"></div>
+
+        </div>
+        
+      </div>
+      
+  <hr>
+
+      <div class = "row">
+
+        <div class = "col-md-12">
+
+          <h3> All Fauna Found </h3>
+
+          <div id = "bubblechart"></div>
+
+        </div>
+
+      </div>
+    
+    </div>
+    
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.7/d3.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+  </html>
