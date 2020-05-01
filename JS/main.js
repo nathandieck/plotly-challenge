@@ -3,23 +3,24 @@
 function plotData(y) {
     d3.json("./data/samples.json").then(function(data2) {
 
-        console.log(data2);
+        let samples = data2.samples;
+        let filtered_samples = samples.filter(thisVariable => thisVariable.id == y);
+        
+        let otuID = filtered_samples[0].otu_ids;
 
-        let otuID = data2.samples[0].otu_ids;
+        let otuSampleSize = filtered_samples[0].sample_values;
 
-        let otuSampleSize = data2.samples[0].sample_values;
-
-        let otuLabel =  data2.samples[0].otu_labels
+        let otuLabel =  filtered_samples[0].otu_labels
 
     // https://stackoverflow.com/questions/39254218/js-get-top-5-max-elements-from-array
         
-        let topOTUs = (data2.samples[0].otu_ids.slice(0, 10)).reverse();
+        let topOTUs = (filtered_samples[0].otu_ids.slice(0, 10)).reverse();
 
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
         
         var OTU_id = topOTUs.map(x => "OTU " + x);
         
-        let otuLabels =  data2.samples[0].otu_labels.slice(0,10);
+        let otuLabels =  filtered_samples[0].otu_labels.slice(0,10);
 
         // https://codepen.io/etpinard/pen/YEbWoO?editors=0010
         var bartrace = {
@@ -81,7 +82,6 @@ function writeData(y) {
     d3.json("./data/samples.json").then(function(data3) {
     
         let partData = data3.metadata;
-        console.log(partData);
     
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 
